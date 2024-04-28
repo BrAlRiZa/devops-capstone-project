@@ -1,3 +1,11 @@
+---
+name: Create issue
+about: Create an issue aligned with user story
+title: ''
+labels: ''
+assignees: ''
+
+---
 **As a** [role]  
 **I need** [function]  
 **So that** [benefit]  
