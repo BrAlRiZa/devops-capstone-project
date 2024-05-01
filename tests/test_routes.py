@@ -169,7 +169,7 @@ class TestAccountService(TestCase):
     def test_update_account_not_found(self):
         """It should not update an Account that is not found"""
         test_account = AccountFactory()
-        
+
         resp = self.client.put(f"{BASE_URL}/0", json=test_account.serialize())
         self.assertEqual(resp.status_code, status.HTTP_404_NOT_FOUND)
 
@@ -181,6 +181,6 @@ class TestAccountService(TestCase):
 
     def test_method_not_allowed(self):
         """It should return an error code not allowing the transaction"""
-        account = self._create_accounts(1)[0]
+        self._create_accounts(1)[0]
         resp = self.client.delete(f"{BASE_URL}")
         self.assertEqual(resp.status_code, status.HTTP_405_METHOD_NOT_ALLOWED)
